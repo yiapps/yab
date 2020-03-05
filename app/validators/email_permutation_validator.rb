@@ -2,7 +2,7 @@
 
 class EmailPermutationValidator < ActiveModel::Validator
   def validate(user)
-    return if user.email.blank?
+    return if skip_validate? user
 
     @email = user.email
     @blocked_emails = ENV['BLOCKED_EMAILS'].split(',')
@@ -10,6 +10,10 @@ class EmailPermutationValidator < ActiveModel::Validator
   end
 
   private
+
+  def skip_validate?(user)
+    user.email.blank? or ENV['BLOCKED_EMAILS'].blank?
+  end
 
   def blocked_email?
     @blocked_emails.include? stripped_dots_email
