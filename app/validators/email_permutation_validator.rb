@@ -2,6 +2,8 @@
 
 class EmailPermutationValidator < ActiveModel::Validator
   def validate(user)
+    return if user.email.blank?
+
     @email = user.email
     @blocked_emails = ENV['BLOCKED_EMAILS'].split(',')
     user.errors.add(:email, I18n.t('users.invalid_email')) if blocked_email?
