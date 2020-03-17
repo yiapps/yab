@@ -360,6 +360,30 @@ body {
   fill: #666;
 }
 
+.iconColorPrimary > svg {
+  fill: #000;
+}
+
+.iconColorWhite > svg {
+  fill: #fff;
+}
+
+.iconColorWhite_onHover:hover > svg {
+  fill: #fff;
+}
+
+.iconColorTertiary > svg {
+  fill: #777;
+}
+
+.iconColorSecondary > svg {
+  fill: #4B4F55;
+}
+
+.iconColorBrand > svg {
+  fill: #21cf7a
+}
+
 .bottom0 {
   bottom: 0;
 }

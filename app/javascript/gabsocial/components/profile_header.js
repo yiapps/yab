@@ -72,7 +72,7 @@ const mapDispatchToProps = (dispatch, { intl }) => ({
       }));
     }
   },
-  
+
   onRepostToggle (account) {
     if (account.getIn(['relationship', 'showing_reblogs'])) {
       dispatch(followAccount(account.get('id'), false));
@@ -108,11 +108,11 @@ class ProfileHeader extends ImmutablePureComponent {
   handleStartChat = () => {
 
   }
-  
+
   handleFollow = () => {
 
   }
-  
+
   makeInfo() {
     const { account, intl } = this.props;
 
@@ -197,7 +197,7 @@ class ProfileHeader extends ImmutablePureComponent {
 
     return (
       <div className={[_s.default, _s.z1, _s.width100PC].join(' ')}>
-        
+
         {
           !headerMissing &&
           <div className={[_s.default, _s.height350PX, _s.width100PC, _s.radiusSmall, _s.overflowHidden].join(' ')}>
@@ -232,7 +232,8 @@ class ProfileHeader extends ImmutablePureComponent {
                   icon='ellipsis'
                   iconWidth='18px'
                   iconHeight='18px'
-                  iconClassName={_s.fillColorBrand}
+                  iconColor='brand'
+                  iconColorHover='white'
                   color='brand'
                   backgroundColor='none'
                   className={[_s.justifyContentCenter, _s.alignItemsCenter, _s.mr10, _s.px10].join(' ')}
@@ -245,7 +246,8 @@ class ProfileHeader extends ImmutablePureComponent {
                 icon='chat'
                 iconWidth='18px'
                 iconHeight='18px'
-                iconClassName={_s.fillColorBrand}
+                iconColor='brand'
+                iconColorHover='white'
                 color='brand'
                 backgroundColor='none'
                 className={[_s.justifyContentCenter, _s.alignItemsCenter, _s.mr10, _s.px10].join(' ')}
